@@ -1,4 +1,4 @@
-package com.linux.designpatterns.adapter.cc.impl;
+package com.linux.designpatterns.facade.log;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.linux.designpatterns.adapter.cc.impl;
+package com.linux.designpatterns.adapter.cc;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -12,6 +12,8 @@ import org.junit.Test;
 
 import com.linux.designpatterns.adapter.cc.CcOne;
 import com.linux.designpatterns.adapter.cc.CcTwo;
+import com.linux.designpatterns.adapter.cc.impl.CcOneImpl;
+import com.linux.designpatterns.adapter.cc.impl.CcOneToCcTwoAdapter;
 
 public class AdapterPatternTest {
 
