@@ -10,7 +10,7 @@ import com.linux.designpatterns.adapter.cc.CcTwo;
  * and this Adapter which implements {@link CcTwo} can use it to return 
  * values required by {@link CcTwo} 
  * 
- * @author guru
+ * @author Guruprasad Kulkarni <guru@linux.com>
  *
  */
 public class CcOneToCcTwoAdapter implements CcTwo {

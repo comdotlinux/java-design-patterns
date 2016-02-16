@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * Existing Credit card interface.
  * 
- * @author guru@linux.com
+ * @author Guruprasad Kulkarni <guru@linux.com>
  *
  */
 public interface CcOne {

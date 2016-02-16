@@ -4,6 +4,10 @@ import java.util.Date;
 
 import com.linux.designpatterns.facade.enums.LogLevel;
 
+/**
+ * The Facade for simple logging but still gives access to internal {@linkplain Logger}
+ * @author Guruprasad Kulkarni <guru@linux.com>
+ */
 public interface SimpleLoggingFacade {
 
 	Logger getLogger();

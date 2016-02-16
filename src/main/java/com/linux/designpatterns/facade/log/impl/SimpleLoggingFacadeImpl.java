@@ -6,6 +6,11 @@ import com.linux.designpatterns.facade.enums.LogLevel;
 import com.linux.designpatterns.facade.log.Logger;
 import com.linux.designpatterns.facade.log.SimpleLoggingFacade;
 
+/**
+ * Implementation of {@linkplain SimpleLoggingFacade}
+ *
+ *  @author Guruprasad Kulkarni <guru@linux.com>
+ */
 public class SimpleLoggingFacadeImpl implements SimpleLoggingFacade {
 
 	private final Logger logger;

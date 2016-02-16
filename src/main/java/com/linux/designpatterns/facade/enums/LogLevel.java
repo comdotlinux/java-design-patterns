@@ -1,5 +1,9 @@
 package com.linux.designpatterns.facade.enums;
 
+/**
+ * Enumeration for selecting different log levels
+ * @author Guruprasad Kulkarni <guru@linux.com>
+ */
 public enum LogLevel {
 
 	TRACE("TRACE_MESSAGE"),

@@ -4,7 +4,7 @@ package com.linux.designpatterns.adapter.cc;
  * 
  * New Interface that is similar but not exactly same as existing.
  * 
- * @author guru
+ * @author Guruprasad Kulkarni <guru@linux.com>
  *
  */
 public interface CcTwo {

@@ -7,7 +7,7 @@ import com.linux.designpatterns.adapter.cc.CcOne;
 /**
  * Current Implementation in use.
  * 
- * @author guru
+ * @author Guruprasad Kulkarni <guru@linux.com>
  *
  */
 public class CcOneImpl implements CcOne {

@@ -5,7 +5,10 @@ import java.util.Date;
 
 import com.linux.designpatterns.facade.enums.LogLevel;
 import com.linux.designpatterns.facade.log.Logger;
-
+/**
+ * Implementation of {@linkplain Logger} interface
+ * @author Guruprasad Kulkarni <guru@linux.com>
+ */
 public class LoggerImpl implements Logger {
 
 	@Override
