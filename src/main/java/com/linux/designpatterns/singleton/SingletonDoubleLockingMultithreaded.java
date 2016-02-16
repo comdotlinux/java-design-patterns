@@ -11,15 +11,21 @@ public class SingletonDoubleLockingMultithreaded {
         
     }
     
+    /**
+     * Get the instance of this class
+     * @return a Singleton instance of this class
+     */
     public static SingletonDoubleLockingMultithreaded getInstance(){
-        if(singleton == null){
+        SingletonDoubleLockingMultithreaded sc = SingletonDoubleLockingMultithreaded.singleton;
+        if(sc == null){
             synchronized(SingletonDoubleLockingMultithreaded.class){
-                if(singleton == null){
-                    singleton = new SingletonDoubleLockingMultithreaded();
+                sc = SingletonDoubleLockingMultithreaded.singleton;
+                if(sc == null){
+                    SingletonDoubleLockingMultithreaded.singleton = sc = new SingletonDoubleLockingMultithreaded();
                 }
             }
         }
         
-        return singleton;
+        return sc;
     }
 }
