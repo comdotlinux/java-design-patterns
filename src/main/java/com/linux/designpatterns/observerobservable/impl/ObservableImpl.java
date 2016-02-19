@@ -30,7 +30,7 @@ public class ObservableImpl implements Observable<String> {
     public Observable<String> subscribe(Observer<String> observable) {
         LOG.info("Adding observable {} to {}", observable, name);
         boolean added = this.observers.add(observable);
-        LOG.info("Added observable? {} to {}", added, name);
+        LOG.info("Added observable to {} ? {}", name, added);
         return this;
     }
 
@@ -41,7 +41,7 @@ public class ObservableImpl implements Observable<String> {
     public Observable<String> unsubscribe(Observer<String> observable) {
         LOG.info("Removing observable {} from name", observable, name);
         boolean removed = this.observers.remove(observable);
-         LOG.info("Removed observable? {} from {}", removed, name);
+         LOG.info("Removed observable from {}? {}", name, removed);
         return this;
     }
 
@@ -50,7 +50,7 @@ public class ObservableImpl implements Observable<String> {
      */
     @Override
     public void notifyObservervables(String t) {
-        LOG.info("{} :: Notifying observers...", name);
+        LOG.info("{} :: Notifying observers... that observed value is updated to {}", name, t);
         for (Observer<String> observer : observers) {
             observer.updated(t);
         }
