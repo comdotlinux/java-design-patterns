@@ -8,6 +8,9 @@ package com.linux.designpatterns.observerobservable;
 import com.linux.designpatterns.observerobservable.impl.ObservableImpl;
 import com.linux.designpatterns.observerobservable.impl.ObserverImpl;
 import static org.easymock.EasyMock.*;
+import org.hamcrest.CoreMatchers;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,14 +25,15 @@ public class ObserverObservableTest {
 
     @Before
     public void setUp() {
-        observable = new ObservableImpl("ObservableUnderTestOne");
+        observable = new ObservableImpl("Observable Under Test");
     }
 
     /**
-     * Just a run -- no asserts here check log output for details.
+     * Just a run -- no useful asserts here check log output for details.
      */
     @Test
     public void runObserverObservable() {
+        System.out.println("com.linux.designpatterns.observerobservable.ObserverObservableTest.runObserverObservable()");
         final ObserverImpl observerOne = new ObserverImpl("Observer One");
         final ObserverImpl observerTwo = new ObserverImpl("Observer Two");
         final ObserverImpl observerThree = new ObserverImpl("Observer Three");
@@ -44,10 +48,20 @@ public class ObserverObservableTest {
         // Removing One observer and notifying
         observable.unsubscribe(observerOne)
                 .notifyObservervables("Second Update.");
+        
+        //Adding fourth and notifying
+        final ObserverImpl observerFour = new ObserverImpl("Observer Four");
+        observable.subscribe(observerFour)
+                .notifyObservervables("Third Update");
+        
+        //Displaying Status
+        assertThat(observable.getInformation(), containsString("Obeservable"));
+        System.out.println("ending com.linux.designpatterns.observerobservable.ObserverObservableTest.runObserverObservable()");
     }
 
     @Test
     public void testObserverNotifiedOnObservableChange() {
+        System.out.println("com.linux.designpatterns.observerobservable.ObserverObservableTest.testObserverNotifiedOnObservableChange()");
         //Arrange
         Observer<String> observerOne = createMock(Observer.class);
         observerOne.updated(anyString());// should get called
@@ -58,11 +72,13 @@ public class ObserverObservableTest {
 
         //Assert
         verify(observerOne);
-
+        System.out.println("ending com.linux.designpatterns.observerobservable.ObserverObservableTest.testObserverNotifiedOnObservableChange()");
     }
 
     @Test
     public void testObserverNOT_NotifiedOnObservableChangeAfterUnSubscribing() {
+        System.out.println("com.linux.designpatterns.observerobservable.ObserverObservableTest.testObserverNOT_NotifiedOnObservableChangeAfterUnSubscribing()");
+        
         //Arrange
         Observer<String> observerOne = createMock(Observer.class);
         // Setting expectation that this wshould get called.
@@ -83,6 +99,7 @@ public class ObserverObservableTest {
         // One will throw Error if updated method is not called and two will throw error if updated method is called.
         verify(observerOne, observerTwo);
 
+        System.out.println("ending com.linux.designpatterns.observerobservable.ObserverObservableTest.testObserverNOT_NotifiedOnObservableChangeAfterUnSubscribing()");
     }
 
 }
