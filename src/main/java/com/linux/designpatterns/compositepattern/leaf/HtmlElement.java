@@ -1,44 +1,41 @@
-package com.linux.designpatterns.compositepattern.composite;
+package com.linux.designpatterns.compositepattern.leaf;
 
 import com.linux.designpatterns.compositepattern.HtmlTag;
-import java.util.ArrayList;
-import java.util.List;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * This is the composite class that is still a element.
- * It implements required methods to become a composite.
+ * The Leaf class that represents a HTML Element
+ * It only implements the abstract methods that are required for the leaf.
  * @author Guruprasad Kulkarni <guru@linux.com>
  */
-public class HtmlParentElement extends HtmlTag {
+public class HtmlElement extends HtmlTag{
 
-    private static final Logger LOG = getLogger(HtmlParentElement.class);
-
+    private static final Logger LOG = getLogger(HtmlElement.class);
+    
     private final String tagName;
-    private final List<HtmlTag> children;
     private String startTag;
     private String endTag;
+    private String tagBody;
 
     /**
      * Public and only Constructor which needs the tag name.
      *
-     * @param tagName
+     * @param tagName set the TagName 
      */
-    public HtmlParentElement(String tagName) {
+    public HtmlElement(String tagName){
         this.tagName = tagName;
-        children = new ArrayList<>();
-        startTag = EMPTY;
-        endTag = EMPTY;
+        this.startTag = EMPTY;
+        this.endTag = EMPTY;
     }
-
+    
     /**
      * {@inheritDoc }
      */
     @Override
     public String getTagName() {
-        return tagName;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -61,16 +58,8 @@ public class HtmlParentElement extends HtmlTag {
      * {@inheritDoc }
      */
     @Override
-    public List<HtmlTag> getChildren() {
-        return children;
-    }
-
-    /**
-     * {@inheritDoc }
-     */
-    @Override
-    public void addChildTag(HtmlTag htmlTag) {
-        this.children.add(htmlTag);
+    public void setTagBody(String tagBody) {
+        this.tagBody = tagBody;
     }
 
     /**
@@ -80,14 +69,12 @@ public class HtmlParentElement extends HtmlTag {
     public String generateHtml() {
         LOG.info(startTag);
         StringBuilder htmlBuilder = new StringBuilder(startTag);
-        for (HtmlTag htmlTag : children) {
-            LOG.info(htmlTag.generateHtml());
-            htmlBuilder.append(htmlTag.generateHtml());
-        }
+        
+        LOG.info(tagBody);
         LOG.info(endTag);
-        htmlBuilder.append(endTag);
-
+        htmlBuilder.append(tagBody).append(endTag);
+        
         return htmlBuilder.toString();
     }
-
+    
 }

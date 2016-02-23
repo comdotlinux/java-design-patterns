@@ -18,8 +18,8 @@ import java.util.List;
  */
 public abstract class HtmlTag {
     public abstract String getTagName();
-    public abstract void setStartTag(String tagName);
-    public abstract void setEndTag(String tagName);
+    public abstract void setStartTag(String startTag);
+    public abstract void setEndTag(String endTag);
     
     /**
      * set the tag body value.
