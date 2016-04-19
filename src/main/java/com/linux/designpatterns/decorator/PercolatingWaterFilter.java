@@ -10,6 +10,7 @@ public class PercolatingWaterFilter extends WaterFilterDecorator{
         super(filter);
     }
 
+    // Delegate To Super and then add your own functionality.
     @Override
     public String filter() {
         return super.filter() + this.getClass().getSimpleName() + ": Filtering with percolation filter....\n";

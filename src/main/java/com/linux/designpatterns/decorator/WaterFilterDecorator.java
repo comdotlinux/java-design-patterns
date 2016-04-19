@@ -12,6 +12,7 @@ public abstract class WaterFilterDecorator implements Filter{
         this.filter = filter;
     }
 
+    // Delegate to Super for filtering.
     @Override
     public String filter() {
         return filter.filter();
