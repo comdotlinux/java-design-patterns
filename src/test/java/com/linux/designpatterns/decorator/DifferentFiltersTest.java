@@ -55,7 +55,7 @@ public class DifferentFiltersTest {
      @Test
      public void WaterFilterWithDecoratorPercolationFilterAndRo() {
          //Arrange
-         WaterFilterDecorator filter = new RoFilter(new PercolatingWaterFilter(new WaterFilter()));
+         Filter filter = new RoFilter(new PercolatingWaterFilter(new WaterFilter()));
          
          //Act
          final String actual = filter.filter();
@@ -65,6 +65,39 @@ public class DifferentFiltersTest {
          assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
          assertThat(actual, containsString(PercolatingWaterFilter.class.getSimpleName()));
          assertThat(actual, containsString(RoFilter.class.getSimpleName()));
+     }
+     
+     @Test
+     public void WaterFilterWithDecoratorPercolationFilterRoAndUv() {
+         //Arrange
+         Filter filter = new UvFilter(new RoFilter(new PercolatingWaterFilter(new WaterFilter())));
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("WaterFilterWithDecoratorPercolationFilterRoAndUv() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(PercolatingWaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(RoFilter.class.getSimpleName()));
+         assertThat(actual, containsString(UvFilter.class.getSimpleName()));
+     }
+     
+     @Test
+     public void WaterFilterWithDecoratorPercolationFilterRoUvAndPolisher() {
+         //Arrange
+         Filter filter = new WaterPolisher(new UvFilter(new RoFilter(new PercolatingWaterFilter(new WaterFilter()))));
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("WaterFilterWithDecoratorPercolationFilterRoAndUv() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(PercolatingWaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(RoFilter.class.getSimpleName()));
+         assertThat(actual, containsString(UvFilter.class.getSimpleName()));
+         assertThat(actual, containsString(WaterPolisher.class.getSimpleName()));
      }
      
      
