@@ -100,5 +100,53 @@ public class DifferentFiltersTest {
          assertThat(actual, containsString(WaterPolisher.class.getSimpleName()));
      }
      
+     @Test
+     public void WaterFilterWithDecoratorPercolationFilterRoUvPolisherAndDeodourizer() {
+         //Arrange
+         Filter filter = new WaterDeOdourizer(new WaterPolisher(new UvFilter(new RoFilter(new PercolatingWaterFilter(new WaterFilter())))));
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("WaterFilterWithDecoratorPercolationFilterRoAndUv() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(PercolatingWaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(RoFilter.class.getSimpleName()));
+         assertThat(actual, containsString(UvFilter.class.getSimpleName()));
+         assertThat(actual, containsString(WaterPolisher.class.getSimpleName()));
+         assertThat(actual, containsString(WaterDeOdourizer.class.getSimpleName()));
+     }
+     
+     @Test
+     public void WaterFilterWithDecoratorUvPolisherAndDeodourizer() {
+         //Arrange
+         Filter filter = new WaterDeOdourizer(new WaterPolisher(new UvFilter(new WaterFilter())));
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("WaterFilterWithDecoratorPercolationFilterRoAndUv() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(UvFilter.class.getSimpleName()));
+         assertThat(actual, containsString(WaterPolisher.class.getSimpleName()));
+         assertThat(actual, containsString(WaterDeOdourizer.class.getSimpleName()));
+     }
+     
+     @Test
+     public void WaterFilterWithDecoratorAndDeodourizer() {
+         //Arrange
+         Filter filter = new WaterDeOdourizer(new WaterFilter());
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("WaterFilterWithDecoratorPercolationFilterRoAndUv() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(WaterDeOdourizer.class.getSimpleName()));
+     }
+     
      
 }
