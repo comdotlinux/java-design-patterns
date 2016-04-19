@@ -1,7 +1,7 @@
 package com.linux.designpatterns.decorator;
 
 /**
- * 2. Second level base class with "isa" relationship
+ * 2. Second level base class with "is-a" relationship
  * @author Guruprasad Kulkarni <guru@linux.com>
  */
 public abstract class WaterFilterDecorator implements Filter{

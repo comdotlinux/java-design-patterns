@@ -148,5 +148,22 @@ public class DifferentFiltersTest {
          assertThat(actual, containsString(WaterDeOdourizer.class.getSimpleName()));
      }
      
+     @Test
+     public void UvFilterWithPolisher() {
+         //Arrange
+         Filter filter = new WaterPolisher(new UvFilter(new WaterFilter()));
+         
+         //Act
+         final String actual = filter.filter();
+         
+         //Assert
+         System.out.println("UvFilterWithPolisher() :: \n" + actual);
+         assertThat(actual, containsString(WaterFilter.class.getSimpleName()));
+         assertThat(actual, containsString(WaterPolisher.class.getSimpleName()));
+         assertThat(actual, containsString(UvFilter.class.getSimpleName()));
+     }
+     
+     
+     
      
 }
