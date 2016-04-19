@@ -6,13 +6,13 @@ package com.linux.designpatterns.decorator;
  */
 public class PercolatingWaterFilter extends WaterFilterDecorator{
     
-    public PercolatingWaterFilter(WaterFilter waterFilter) {
-        super(waterFilter);
+    public PercolatingWaterFilter(Filter filter) {
+        super(filter);
     }
 
     @Override
     public String filter() {
-        return "PercolatingWaterFilter : Filtering with percolation filter....\n" + super.filter();
+        return super.filter() + this.getClass().getSimpleName() + ": Filtering with percolation filter....\n";
     }
     
     

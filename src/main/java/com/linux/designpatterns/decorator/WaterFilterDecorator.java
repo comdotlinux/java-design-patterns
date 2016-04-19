@@ -1,20 +1,20 @@
 package com.linux.designpatterns.decorator;
 
 /**
- *
+ * 2. Second level base class with "isa" relationship
  * @author Guruprasad Kulkarni <guru@linux.com>
  */
-public class WaterFilterDecorator extends WaterFilter{
+public abstract class WaterFilterDecorator implements Filter{
     
-    protected WaterFilter waterFilter;
+    protected Filter filter;
     
-    public WaterFilterDecorator(WaterFilter waterFilter) {
-        this.waterFilter = waterFilter;
+    public WaterFilterDecorator(Filter filter) {
+        this.filter = filter;
     }
 
     @Override
     public String filter() {
-        return super.filter();
+        return filter.filter();
     }
     
     

@@ -6,13 +6,13 @@ package com.linux.designpatterns.decorator;
  */
 public class WaterDeOdourizer extends WaterFilterDecorator{
     
-    public WaterDeOdourizer(WaterFilter waterFilter) {
-        super(waterFilter);
+    public WaterDeOdourizer(Filter filter) {
+        super(filter);
     }
 
     @Override
     public String filter() {
-        return "WaterDeOdourizer : De-Odourising water using Propritery Technology...\n" + super.filter();
+        return super.filter() + this.getClass().getSimpleName() + " : De-Odourising water using Propritery Technology...\n";
     }
     
     

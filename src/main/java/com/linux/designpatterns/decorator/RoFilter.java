@@ -6,13 +6,13 @@ package com.linux.designpatterns.decorator;
  */
 public class RoFilter extends WaterFilterDecorator{
     
-    public RoFilter(WaterFilter waterFilter) {
-        super(waterFilter);
+    public RoFilter(Filter filter) {
+        super(filter);
     }
 
     @Override
     public String filter() {
-        return "RoFilter: Performing Reverse Osmosis....\n" + super.filter();
+        return super.filter() + this.getClass().getSimpleName() + ": Performing Reverse Osmosis....\n";
     }
     
 }

@@ -11,13 +11,13 @@ package com.linux.designpatterns.decorator;
  */
 public class WaterPolisher extends WaterFilterDecorator{
     
-    public WaterPolisher(WaterFilter waterFilter) {
-        super(waterFilter);
+    public WaterPolisher(Filter filter) {
+        super(filter);
     }
 
     @Override
     public String filter() {
-        return "WaterPolisher: Polishing water color using propritery technology...\n" + super.filter();
+        return super.filter() + this.getClass().getSimpleName() + ": Polishing water color using propritery technology...\n";
     }
     
     
