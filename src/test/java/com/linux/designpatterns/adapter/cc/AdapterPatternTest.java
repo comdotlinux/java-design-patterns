@@ -3,15 +3,13 @@ package com.linux.designpatterns.adapter.cc;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import java.math.BigDecimal;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.linux.designpatterns.adapter.cc.CcOne;
-import com.linux.designpatterns.adapter.cc.CcTwo;
 import com.linux.designpatterns.adapter.cc.impl.CcOneImpl;
 import com.linux.designpatterns.adapter.cc.impl.CcOneToCcTwoAdapter;
 
