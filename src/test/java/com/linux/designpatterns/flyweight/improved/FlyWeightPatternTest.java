@@ -44,7 +44,7 @@ public class FlyWeightPatternTest {
      @Test
      public void checkWithExtraDuplicatesInput() {
          //Arrange
-         String expected = "Thissssssssss isssssssss aaaaaaa veeerrrryyyyy aaaaabnooorrrmmmaaalll Strrrrrring. It hasssssss nothhhhhhhing sssssspeciallllll innnnnnnnn ittttttttt!";
+         String expected = "Thissssssssss isssssssss aaaaaaa veeerrrryyyyy aaaaabnooorrrmmmaaalll Strrrrrring. It hasssssss soooo muuchhhhh sssssspeciallllll innnnnnnnn ittttttttt!";
          for (char c : expected.toCharArray()) {
              this.ut.add(c);
          }
