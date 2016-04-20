@@ -32,7 +32,11 @@ public class WordProcessor {
     public String showText() {
         StringBuilder textBuilder = new StringBuilder();
         for (Map.Entry<Character, Letter> entry  : letterCache.entrySet()) {
-            textBuilder.append(entry.getValue().getLetter());
+            LOG.debug("Enty has Key {} and value {}", entry.getKey(), entry.getValue());
+            final Letter value = entry.getValue();
+            if(null != value) {
+                textBuilder.append(value.getLetter());
+            }
         }
         
         final String currentText = textBuilder.toString();
