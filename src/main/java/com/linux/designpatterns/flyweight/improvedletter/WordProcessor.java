@@ -1,5 +1,6 @@
 package com.linux.designpatterns.flyweight.improvedletter;
 
+import static com.linux.designpatterns.flyweight.improvedletter.Letter.getLetter;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class WordProcessor {
 
     public WordProcessor add(char c) {
         LOG.info("Added character ->{}<- to Word Processor", c);
-        letters.add(new Letter(c));
+        letters.add(getLetter(c));
         return this;
     }
     

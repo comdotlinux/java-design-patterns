@@ -19,13 +19,27 @@ public class Letter {
     
     private static final Logger LOG = LoggerFactory.getLogger(Letter.class);
     
-    private static final Map<String, Letter> letters = new HashMap<String, Letter>();
+    private static final Map<Character, Letter> LETTERS = new HashMap<Character, Letter>();
     
     private final char letter;
 
-    public Letter(char letter) {
-        LOG.info("Creating Letter ->{}<-", letter);
+    private Letter(char letter) {
         this.letter = letter;
+    }
+    
+    /**
+     * Creating instance of Letter or returning from cache if it is available.
+     * @param letter letter for which character instance need to be created.
+     * @return {@linkplain Letter} instance.
+     */
+    public static final Letter getLetter(char letter) {
+        Letter l = LETTERS.get(letter);
+        LOG.info("letter available in cache? {}", l == null);
+        if(l == null) {
+            LOG.info("Creating Letter ->{}<-", letter);
+            l = LETTERS.put(letter, new Letter(letter));
+        }
+        return l;
     }
 
     public char getLetter() {
