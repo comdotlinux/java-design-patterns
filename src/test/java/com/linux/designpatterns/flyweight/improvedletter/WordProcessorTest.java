@@ -20,9 +20,6 @@ public class WordProcessorTest {
 
     private WordProcessor wp;
 
-    public WordProcessorTest() {
-    }
-
     @Before
     public void setUp() {
         this.wp = new WordProcessor();

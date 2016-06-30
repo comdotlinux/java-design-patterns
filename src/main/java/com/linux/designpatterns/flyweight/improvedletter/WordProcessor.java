@@ -34,6 +34,7 @@ public class WordProcessor {
     public String showText() {
         StringBuilder textBuilder = new StringBuilder();
         for (Letter letter : letters) {
+            LOG.info("Letter object : {}", letter);
             textBuilder.append(letter.getLetter());
         }
         
