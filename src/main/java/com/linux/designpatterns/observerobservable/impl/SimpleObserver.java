@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ObserverImpl implements Observer<String> {
+public class SimpleObserver implements Observer<String> {
 
     private final String name;
 
@@ -22,18 +22,18 @@ public class ObserverImpl implements Observer<String> {
      *
      * @param name
      */
-    public ObserverImpl(String name) {
+    public SimpleObserver(String name) {
         this.name = name;
     }
 
-    private static final Logger LOG = LoggerFactory.getLogger(ObserverImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SimpleObserver.class);
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void updated(String t) {
-        LOG.info("Updated Observer {} with data {}.", name, t);
+        LOG.info("Updated {} with data {}.", this, t);
     }
 
     /**
@@ -58,7 +58,7 @@ public class ObserverImpl implements Observer<String> {
         if (obj.getClass() != getClass()) {
             return false;
         }
-        ObserverImpl rhs = (ObserverImpl) obj;
+        SimpleObserver rhs = (SimpleObserver) obj;
         return new EqualsBuilder().append(name, rhs.name).isEquals();
     }
 

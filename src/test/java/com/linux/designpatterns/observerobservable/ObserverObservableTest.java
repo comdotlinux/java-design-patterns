@@ -5,10 +5,9 @@
  */
 package com.linux.designpatterns.observerobservable;
 
-import com.linux.designpatterns.observerobservable.impl.ObservableImpl;
-import com.linux.designpatterns.observerobservable.impl.ObserverImpl;
+import com.linux.designpatterns.observerobservable.impl.SimpleObservable;
+import com.linux.designpatterns.observerobservable.impl.SimpleObserver;
 import static org.easymock.EasyMock.*;
-import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -25,7 +24,7 @@ public class ObserverObservableTest {
 
     @Before
     public void setUp() {
-        observable = new ObservableImpl("Observable Under Test");
+        observable = new SimpleObservable("Observable Under Test");
     }
 
     /**
@@ -34,15 +33,15 @@ public class ObserverObservableTest {
     @Test
     public void runObserverObservable() {
         System.out.println("com.linux.designpatterns.observerobservable.ObserverObservableTest.runObserverObservable()");
-        final ObserverImpl observerOne = new ObserverImpl("Observer One");
-        final ObserverImpl observerTwo = new ObserverImpl("Observer Two");
-        final ObserverImpl observerThree = new ObserverImpl("Observer Three");
+        final SimpleObserver observerOne = new SimpleObserver("Observer One");
+        final SimpleObserver observerTwo = new SimpleObserver("Observer Two");
+        final SimpleObserver observerThree = new SimpleObserver("Observer Three");
 
         // Adding three Observers and notifying
         observable.subscribe(observerOne)
                 .subscribe(observerTwo)
                 .subscribe(observerThree)
-                .subscribe(new ObserverImpl("Observer Four"))
+                .subscribe(new SimpleObserver("Observer Four"))
                 .notifyObservervables("First Update.");
 
         // Removing One observer and notifying
@@ -50,7 +49,7 @@ public class ObserverObservableTest {
                 .notifyObservervables("Second Update.");
         
         //Adding fourth and notifying
-        final ObserverImpl observerFour = new ObserverImpl("Observer Four");
+        final SimpleObserver observerFour = new SimpleObserver("Observer Four");
         observable.subscribe(observerFour)
                 .notifyObservervables("Third Update");
         
