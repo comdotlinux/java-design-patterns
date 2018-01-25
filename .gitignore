@@ -1,4 +1,12 @@
 *.class
+.project
+.settings
+.classpath
+nb-configuration.xml
+glassfish-web.xml
+
+*.iml
+idea/**
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -14,3 +22,6 @@ hs_err_pid*
 */target/**
 /target/
 /nbproject/
+/nb_jr_remoting.cfg
+.idea/
+.nbproject
