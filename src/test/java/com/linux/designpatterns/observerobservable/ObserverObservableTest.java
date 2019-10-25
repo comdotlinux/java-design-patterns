@@ -24,7 +24,7 @@ public class ObserverObservableTest {
 
     @Before
     public void setUp() {
-        observable = new SimpleObservable("Observable Under Test");
+        observable = new SimpleObservable<>("Observable Under Test");
     }
 
     /**
@@ -54,7 +54,7 @@ public class ObserverObservableTest {
                 .notifyObservervables("Third Update");
         
         //Displaying Status
-        assertThat(observable.getInformation(), containsString("Obeservable"));
+        assertThat(observable.getInformation(), containsString("Observable"));
         System.out.println("ending com.linux.designpatterns.observerobservable.ObserverObservableTest.runObserverObservable()");
     }
 
