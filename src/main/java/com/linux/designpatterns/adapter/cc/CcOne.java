@@ -9,7 +9,6 @@ import java.math.BigDecimal;
  *
  */
 public interface CcOne {
-
 	public String getCreditCardNo();
 	public String getCustomerName();
 	public String getCardExpMonth();

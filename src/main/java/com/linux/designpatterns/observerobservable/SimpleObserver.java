@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.linux.designpatterns.observerobservable.impl;
+package com.linux.designpatterns.observerobservable;
 
-import com.linux.designpatterns.observerobservable.Observer;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

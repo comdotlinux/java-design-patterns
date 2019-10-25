@@ -5,8 +5,6 @@
  */
 package com.linux.designpatterns.observerobservable;
 
-import com.linux.designpatterns.observerobservable.impl.SimpleObservable;
-import com.linux.designpatterns.observerobservable.impl.SimpleObserver;
 import static org.easymock.EasyMock.*;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;

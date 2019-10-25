@@ -10,9 +10,6 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.linux.designpatterns.adapter.cc.impl.CcOneImpl;
-import com.linux.designpatterns.adapter.cc.impl.CcOneToCcTwoAdapter;
-
 public class AdapterPatternTest {
 
 	private static final String CARD_EXPIRY_MONTH = "12";
@@ -33,7 +30,7 @@ public class AdapterPatternTest {
 	
 	@Before
 	public void setUp(){
-		ccOne = new CcOneImpl();
+		ccOne = new BasicCcOne();
 		ccOne.setCustomerName(CC_OWNER_NAME);
 		ccOne.setCreditCardNo(CC_NUMBER);
 		ccOne.setCardCVVNo(CVV);

@@ -1,4 +1,4 @@
-package com.linux.designpatterns.adapter.cc.impl;
+package com.linux.designpatterns.adapter.cc;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ import com.linux.designpatterns.adapter.cc.CcOne;
  * @author Guruprasad Kulkarni <guru@linux.com>
  *
  */
-public class CcOneImpl implements CcOne {
+public class BasicCcOne implements CcOne {
 
 	private String creditCardNo;
 	private String customerName;

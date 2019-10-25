@@ -1,4 +1,4 @@
-name: JavaCI
+name: Maven_CI_Build
 
 on: [push]
 
