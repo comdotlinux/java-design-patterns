@@ -7,10 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.linux.designpatterns.facade.enums.LogLevel;
-import com.linux.designpatterns.facade.log.Logger;
-import com.linux.designpatterns.facade.log.SimpleLoggingFacade;
-import com.linux.designpatterns.facade.log.impl.LoggerImpl;
-import com.linux.designpatterns.facade.log.impl.SimpleLoggingFacadeImpl;
 
 public class FacadePatternTest {
 
@@ -20,7 +16,7 @@ public class FacadePatternTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		logger = new LoggerImpl();
+		logger = new SystemOutLogger();
 		slf = new SimpleLoggingFacadeImpl(logger);
 		slf.useSystemDate();
 		slf.setDatePattern("DD-mm-yyyy");

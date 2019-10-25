@@ -1,4 +1,4 @@
-package com.linux.designpatterns.adapter.cc.impl;
+package com.linux.designpatterns.adapter.cc;
 
 import com.linux.designpatterns.adapter.cc.CcOne;
 import com.linux.designpatterns.adapter.cc.CcTwo;

@@ -1,6 +1,6 @@
 # java-design-patterns
 
-[![Actions Status](https://github.com/comdotlinux/java-design-patterns/workflows/JavaCI/badge.svg)](https://github.com/comdotlinux/java-design-patterns/actions)
+[![Actions Status](https://github.com/comdotlinux/java-design-patterns/workflows/Maven_CI_Build/badge.svg)](https://github.com/comdotlinux/java-design-patterns/actions)
 
 My Implementations of Common Design Patterns for later reference and display
 

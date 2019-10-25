@@ -1,4 +1,4 @@
-package com.linux.designpatterns.observerobservable.impl;
+package com.linux.designpatterns.observerobservable;
 
 import com.linux.designpatterns.observerobservable.Observable;
 import com.linux.designpatterns.observerobservable.Observer;
