@@ -11,3 +11,7 @@ Currently Added :
 4. Observer Observable
 5. Singleton
 6. Flyweight pattern
+
+
+
+-------
